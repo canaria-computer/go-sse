@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <h1>SSE Demo</h1>
+  <pre id="time"></pre>
+  <script>
+    const evtSource = new EventSource("/sse");
+    evtSource.onmessage = e => {
+      document.getElementById("time").textContent += "\n" + e.data;
+    };
+  </script>
+</body>
+
+</html>
